@@ -35,12 +35,5 @@ pipeline {
                 }
             }
         }
-        stage('destroy to k8s'){
-            steps{
-                script{
-                    kubernetesDeploy (configs: 'kubectl delete -f deploymentservice.yaml',kubeconfigId: 'll')
-                }
-            }
-        }
     }
 }
