@@ -35,7 +35,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to k8s'){
+        stage('destroy to k8s'){
             steps{
                 script{
                     sh "kubectl delete -f deploymentservice.yaml"
