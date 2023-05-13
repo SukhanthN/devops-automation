@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t sukhanth1/sk-automation:1.0 .'
+                    sh 'docker build -t sukhanth1/sk-automation:2.0 .'
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
                    withCredentials([string(credentialsId: 'dockerlog', variable: 'docker')]) {
                    sh 'docker login -u sukhanth1 -p ${docker}'
 }
-                   sh 'docker push sukhanth1/sk-automation:1.0'
+                   sh 'docker push sukhanth1/sk-automation:2.0'
                 }
             }
         }
