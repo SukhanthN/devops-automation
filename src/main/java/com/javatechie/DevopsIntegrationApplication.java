@@ -11,9 +11,8 @@ public class DevopsIntegrationApplication {
 
 	@GetMapping
 	public String message() {
-	    String boldText = "\u001B[1mHello world this sukhanth\u001B[0m";
-	    String coloredBackground = "\u001B[43m" + boldText + "\u001B[0m";
-	    return coloredBackground;
+		String styledMessage = "<div style=\"font-weight: bold; background-color: red;\">Hello world this sukhanth</div>";
+    		return styledMessage;
 }
 
 	public static void main(String[] args) {
