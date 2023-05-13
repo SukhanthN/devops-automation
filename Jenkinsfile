@@ -38,7 +38,7 @@ pipeline {
         stage('destroy to k8s'){
             steps{
                 script{
-                    sh 'kubectl delete deployment spring-boot-k8s-deployment --namespace=default'
+                    kubernetesDeploy (configs: 'kubectl delete -f deploymentservice.yaml',kubeconfigId: 'll')
                 }
             }
         }
