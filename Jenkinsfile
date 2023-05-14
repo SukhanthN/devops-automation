@@ -20,7 +20,7 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerlog', variable: 'docker')]) {
+                   withCredentials([string(credentialsId: 'docker_pwd', variable: 'docker')])  {
                    sh 'docker login -u sukhanth1 -p ${docker}'
 }
                    sh 'docker push sukhanth1/sk-automation:4.0'
